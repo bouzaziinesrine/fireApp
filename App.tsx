@@ -1,20 +1,33 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import List from './app/screen/List';
+import Details from './app/screen/Details';
+import Login from './app/screen/Login';
+import { onAuthStateChanged } from 'firebase/auth';
+import { useEffect, useState } from 'react';
+
+
+const Stack = createNativeStackNavigator()
+
+
 
 export default function App() {
+  // const [authenticated, setAuthenticated] = useState(false)
+
+  useEffect (() => {
+    onAuthStateChanged
+  })
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName='My Todo'>
+        <Stack.Screen name="My Todo" component={List} />
+        <Stack.Screen name="Login" component={Login} />
+
+      </Stack.Navigator>
+
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
