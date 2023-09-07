@@ -4,12 +4,12 @@ import { getFirestore}  from '@firebase/firestore'
 
 // Initialize Firebase
 const firebaseConfig = {
-    apiKey: "AIzaSyDDXeFv0WGmGmofmwBJYL6U1--SIzX-SU0",
-    authDomain: "fireapp-9e56e.firebaseapp.com",
-    projectId: "fireapp-9e56e",
-    storageBucket: "fireapp-9e56e.appspot.com",
-    messagingSenderId: "792051753383",
-    appId: "1:792051753383:web:96766bdebbd7dfd99e5682"
+    apiKey: "AIzaSyCc-TbhnFO8nawVyrPA6xEzGgXXzSWfEnU",
+  authDomain: "todo-eadf4.firebaseapp.com",
+  projectId: "todo-eadf4",
+  storageBucket: "todo-eadf4.appspot.com",
+  messagingSenderId: "80864763927",
+  appId: "1:80864763927:web:a00479a29ddac5dbce7c52"
 };
 
 export const FIREBASE_APP = initializeApp(firebaseConfig)

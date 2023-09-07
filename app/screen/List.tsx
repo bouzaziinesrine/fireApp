@@ -21,7 +21,7 @@ const List = ({navigation} : any) => {
 
 
     useEffect(() => {
-        const todoRef = collection(FIRESTORE_DB,'todo')
+        const todoRef = collection(FIRESTORE_DB,'todos')
 
         const subscriber = onSnapshot(todoRef, {
             next:(snapshot) => {
@@ -42,7 +42,7 @@ const List = ({navigation} : any) => {
     }, [])
 
     const addTodo = async () => {
-        const doc = await addDoc(collection(FIRESTORE_DB, 'todo'), {title: todo, done:false})
+        const doc = await addDoc(collection(FIRESTORE_DB, 'todos'), {title: todo, done:false})
         setTodo('')
     }
 
